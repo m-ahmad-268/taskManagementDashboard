@@ -1,0 +1,67 @@
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+
+<div class="container">
+  <div class="flex bg-primary-100">
+    <div class="grid flex-1 justify-content-center bg-red-200">
+      <div class="col-11">
+        <!-- <div class="card">
+          <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }"
+            selectionMode="single" [(selection)]="selectedProduct">
+            <ng-template pTemplate="header">
+              <tr>
+                <th style="width: 4rem"><p-tableHeaderCheckbox /></th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+              <tr (dblclick)="onRowSelect(product)">
+                <td>
+                  <p-tableCheckbox [value]="product" />
+                </td>
+                <td>{{ product.code }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.quantity }}</td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div> -->
+        <!-- <div class="card">
+          <div class="grid">
+            <div class="lg:col-6 col-12 bg-green-300 pt-3">
+              <div class="flex bg-red-100 justify-content-center">
+                <p-chart type="bar" [data]="basicData" [options]="basicOptions" class="w-full" />
+              </div>
+            </div>
+            <div class="lg:col-6 col-12">
+              <div class="flex flex-1 justify-content-center bg-primary">
+                <p-chart type="pie" [data]="data" [options]="options" />
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <button pButton type="button" (click)="toggleSideBar()" label="Show Sidebar">SideBar</button> -->
+
+<!-- <p-dialog header="Product Details" [(visible)]="displayDialog" [modal]="true" [style]="{ width: '30vw' }">
+  <div *ngIf="selectedProduct">
+    <p><strong>Code:</strong> {{ selectedProduct.code }}</p>
+    <p><strong>Name:</strong> {{ selectedProduct.name }}</p>
+    <p><strong>Category:</strong> {{ selectedProduct.category }}</p>
+    <p><strong>Quantity:</strong> {{ selectedProduct.quantity }}</p>
+  </div>
+</p-dialog> -->
+
+<!-- <p-sidebar [(visible)]="sidebarVisible" position="left" [baseZIndex]="10000">
+  <h3>Sidebar Content</h3>
+  <p>This is a simple sidebar.</p>
+</p-sidebar> -->
