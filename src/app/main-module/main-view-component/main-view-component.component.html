@@ -1,0 +1,58 @@
+<p-toolbar styleClass="mb-4">
+    <a href="#" (click)="homeRoute()" style="text-decoration: none; font-size: 18px;">
+        <div class="p-toolbar-group-left">
+            <h3 class="m-0">Project and Task Management</h3>
+        </div>
+    </a>
+    <div class="p-toolbar-group-right">
+        <button pButton icon="pi pi-sign-out" label="logout" class="p-button-danger" (click)="logout()">
+        </button>
+    </div>
+</p-toolbar>
+<div class="card bg-green-100 p-3">
+    <div class="grid">
+        <!-- <div class="col-4 p-shadow-3">
+            <div class="bg-blue-100 flex justify-content-center align-items-center">
+                <div>
+                    <h5 style="font-size: 16rem;">Total Projects</h5>
+                    <h2 class="p-mt-1">128</h2>
+                </div>
+            </div>
+        </div> -->
+        <div class="col-3 p-shadow-3">
+            <div class="bg-yellow-200 flex justify-content-center align-items-center">
+                <div class="text-center">
+                    <h2 class="p-m-0">Total Projects</h2>
+                    <h2 class="p-mt-1">{{projects.length}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 p-shadow-3">
+            <div class="bg-blue-200 flex justify-content-center align-items-center">
+                <div class="text-center">
+                    <h2 class="p-m-0">Total Tasks</h2>
+                    <h2 class="p-mt-1">{{tasks.length}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 p-shadow-3">
+            <div class="bg-red-200 flex justify-content-center align-items-center">
+                <div class="text-center">
+                    <h2 class="p-m-0">Overdue Tasks</h2>
+                    <h2 class="p-mt-1">{{getProjectProgress()}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 p-shadow-3">
+            <div class="bg-green-300 flex justify-content-center align-items-center">
+                <div class="text-center">
+                    <h2 class="p-m-0">Completed Tasks</h2>
+                    <h2 class="p-mt-1">{{getCompletedTask()}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

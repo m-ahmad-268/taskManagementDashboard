@@ -1,0 +1,68 @@
+<p-dialog [(visible)]="isModalVisible" (onHide)="closeModal()" [style]="{ width: '50vw' }"
+    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [modal]="true"
+    [header]="taskForm.get('id')?.value ? 'Edit Task': 'Add Task' ">
+    <form [formGroup]="taskForm" (ngSubmit)="saveTask()">
+        <div class="grid">
+            <div class="lg:col-6 col-12">
+                <div class="p-fluid">
+                    <div class="p-field m-1">
+                        <label for="taskTitle">Title</label>
+                        <input id="taskTitle" formControlName="title" placeholder="Title" pInputText type="text"
+                            class="p-error" />
+                        <small *ngIf="taskForm.get('title')?.invalid && taskForm.get('title')?.touched"
+                            class="text-red-100">{{invalidText}}</small>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-6 col-12">
+                <div class="p-fluid">
+                    <div class="p-field m-1">
+                        <label for="taslAssignee">Assignee</label>
+                        <input id="taslAssignee" formControlName="assignee" pInputText type="text"
+                            placeholder="Assignee" class="p-error" />
+                        <small *ngIf="taskForm.get('assignee')?.invalid && taskForm.get('assignee')?.touched"
+                            class="text-red-100">{{invalidText}}</small>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-6 col-12">
+                <div class="p-fluid">
+                    <div class="p-field m-1">
+                        <label for="DueDate">Date</label>
+                        <p-calendar appendTo="body" formControlName="dueDate" dateFormat="dd-MM-yy"></p-calendar>
+                        <small *ngIf="taskForm.get('dueDate')?.invalid && taskForm.get('dueDate')?.touched"
+                            class="text-red-100">{{invalidText}}</small>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-6 col-12">
+                <div class="p-fluid">
+                    <div class="p-field m-1">
+                        <label for="status">Status</label>
+                        <p-dropdown appendTo="body" formControlName="status" class="p-error" [options]="arrStatus">
+                        </p-dropdown>
+                        <small *ngIf="taskForm.get('status')?.invalid && taskForm.get('status')?.touched"
+                            class="text-red-100">{{invalidText}}</small>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-6 col-12">
+                <div class="p-fluid">
+                    <div class="p-field m-1">
+                        <label for="Priority">Priority</label>
+                        <p-dropdown appendTo="body" formControlName="priority" class="p-error" [options]="arrPriority">
+                        </p-dropdown>
+                        <small *ngIf="taskForm.get('priority')?.invalid && taskForm.get('priority')?.touched"
+                            class="text-red-100">{{invalidText}}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="p-fluid"> -->
+        <div class="flex justify-content-end" style="gap: 10px;">
+            <button pButton type="submit" [disabled]="taskForm.invalid" label="Save" class="p-button-primary"></button>
+            <button pButton type="button" label="Cancel" (click)="closeModal()" class="p-button-danger"></button>
+        </div>
+        <!-- </div> -->
+    </form>
+</p-dialog>
